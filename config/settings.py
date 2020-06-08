@@ -23,7 +23,7 @@ SECRET_KEY = 'ylf09=-$*b9gmrif0*!61j38qc+@8pi_486ob7%q205ih#3*3r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 # EMAIL_BACKEND = 'smtp.gmail.com
 EMAIL_HOST_USER = "komkomdjango21@gmail.com"
 EMAIL_HOST = 'smtp.gmail.com'

@@ -1,0 +1,300 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+
+
+<body id="wrapper">
+
+{% block content %}
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('static/img/banner-slide-1.jpg');"></div>
+                <div class="carousel-caption slide-up">
+                    <h1 class="banner_heading">Welcom to <span>shuty </span>Django Blog</h1>
+                    <p class="banner_txt">Lorem ipsum dolor sit amet sit legimus copiosae instructior eiut vix denique fierentis ea saperet inimicu utqui dolor oratio mnesarchum.</p>
+                    <div class="slider_btn">
+                        <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
+                        <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="fill" style="background-image:url('static/img/banner-slide-2.jpg');"></div>
+                <div class="carousel-caption slide-up">
+                    <h1 class="banner_heading">Providing The <span>Highest </span>Lorem</h1>
+                    <p class="banner_txt">Lorem ipsum dolor sit amet sit legimus copiosae instructior eiut vix denique fierentis ea saperet inimicu utqui dolor oratio mnesarchum.</p>
+                    <div class="slider_btn">
+                        <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
+                        <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="fill" style="background-image:url('static/img/banner-slide-3.jpg');"></div>
+                <div class="carousel-caption slide-up">
+                    <h1 class="banner_heading">Providing The <span>Highest </span>Lorem</h1>
+                    <p class="banner_txt">Lorem ipsum dolor sit amet sit legimus copiosae instructior eiut vix denique fierentis ea saperet inimicu utqui dolor oratio mnesarchum.</p>
+                    <div class="slider_btn">
+                        <button type="button" class="btn btn-default slide">Learn More <i class="fa fa-caret-right"></i></button>
+                        <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+
+    <section id="about">
+
+        <div class="image-holder col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-left">
+            <div class="background-imgholder">
+                <img src="img/1.jpg" alt="about" class="img-responsive" style="display:none;" />
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="col-md-7 col-md-offset-5 col-sm-8 col-sm-offset-2 col-xs-12 text-inner ">
+                <div class="text-block">
+                    <div class="section-heading">
+                        <p class="requierd_signup">if you wanna post new, please log in.</p>
+                        <form action="{% url 'post_create' %}">
+                            <button type="submit" class="btn btn-primary slide">New Post</button>
+                        </form>
+                        <div class="scroll">
+                            {% for post in posts %}
+                            <h1><a class="blog_title" href="{% url 'post_detail' post.pk %}">{{ post.title }} <small>written by : </small><span class="blog_author">{{ post.author }}</span></a></h1>
+                            <li> <i class="fa fa-check"></i>{{ post.content }}</li>
+                            <p class="subheading blog_date">{{ post.date_posted|date:'Y-m-d P' }}</p>
+                            <hr>
+                            {% endfor %}
+                        </div>
+                        <style>
+                            .blog_title{
+                                font-size: 20px;
+                                font-weight: 600;
+                            }
+                            .blog_author{
+                                font-size: 15px;
+                            }
+                            .scroll{ 
+                                height: 400px;
+                                border-top: 1px solid #ccc;
+                                overflow: scroll;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="process">
+        <div class="container">
+            <div class="section-heading text-center">
+                <div class="col-md-12 col-xs-12">
+                    <h1>about <span>my skills</span></h1>
+
+                    <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam nostrud euismod volumus ne mei.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 block process-block">
+                    <div class="process-icon-holder">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <style>
+                        .fab.fa-html5{
+                            font-size: 100px;
+                            font-weight: 400;
+                            color: #db5037;
+                            position: relative;
+                            top: 30px;
+                        }
+                    </style>
+                 
+
+                    <div class="process-text-block">
+                        <h4><a href="#">HTML5</a></h4>
+                        <p>HTML is a computer language devised to allow website creation. These websites can then be viewed by anyone else connected to the Internet.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 block process-block">
+                    <div class="process-icon-holder">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <style>
+                        .fab.fa-css3-alt{
+                            font-size: 100px;
+                            font-weight: 400;
+                            color: #5092de;
+                            position: relative;
+                            top: 30px;
+                        }
+                    </style>
+
+                    <div class="process-text-block">
+                        <h4><a href="#">CSS3</a></h4>
+                        <p>CSS is a simple design language intended to simplify the process of making web pages presentable Cascading Style Sheets.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 block process-block">
+                    <div class="process-icon-holder">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <style>
+                        .fab.fa-js-square{
+                            font-size: 100px;
+                            font-weight: 400;
+                            color: #f5e72d;
+                            position: relative;
+                            top: 30px;
+                        }
+                    </style>
+                  
+                    <div class="process-text-block">
+                        <h4><a href="#">javascript</a></h4>
+                        <p>JavaScript is a scripting language used to create and control dynamic website content. anything that moves, refreshes, or otherwise changes on your screen without requiring you to manually reload a web page.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 block process-block lastchild">
+                    <div class="process-icon-holder">
+                            <i class="fab fa-python"></i>
+                    </div>
+                        <style>
+                            .fab.fa-python{
+                                font-size: 100px;
+                                font-weight: 400;
+                                color: #50aade;
+                                position: relative;
+                                top: 30px;
+                            }
+                        </style>
+                    <div class="process-text-block">
+                        <h4><a href="#">python</a></h4>
+                        <p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--Section: Contact v.2-->
+<!-- <section class="mb-4 contact_form">
+    <div class="container">
+    <h1 class="h1-responsive font-weight-bold text-center my-4">Contact me</h1>
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. I will come back to you within
+        a matter of hours to help you.</p>
+    <style>
+        .w-responsive{
+            margin-bottom: 50px;
+        }
+    </style>
+
+    <div class="row">
+
+        <div class="col-md-9">
+            <form id="contact-form" name="contact-form" action="" method="POST">{% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+                    <div class="text-center text-md-left">
+                        <input type="submit" value="send">
+                    </div>
+            <a href="{% url 'contact_form' %}">go</a>
+
+            <div class="status"></div>
+        </div>
+
+        <div class="col-md-3">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Edogawaku, TOKYO, JAPAN</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 09 111 999 1234</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>bbshutyforcebn@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <style>
+        .contact_form{
+            background-image: url(static/img/bg2.jpg);
+            background-size: cover;
+            background-position: center;
+            padding-bottom: 50px;
+        }
+        .contact_form p,
+        .contact_form h1{
+            color: white;
+        }
+
+    </style>
+</section>  -->
+{% endblock content %}
+
+
+
+</body>

@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/skin.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript"  src="{% static 'js/index.js' %}"></script>
+    <style>
+    </style>
+</head>
+
+<body id="wrapper">
+    <section id="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-7 col-xs-7 top-header-links">
+                    <ul class="contact_links">
+                        <li><i class="fa fa-phone"></i><a href="#">+91 000 999 1234</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="#">bbshutyforcebn@gmail.com</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="col-md-5 col-sm-5 col-xs-5 social">
+                    <ul class="social_links">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+                        <a class="navbar-brand" href="#">
+                            <h1>Django CRUD</h1><span>tutorail</span></a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{% url 'blog_home' %}">Home</a></li>
+                            <li><a href="#about">Blog</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="{% url 'contact_form' %}">Contact</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                            <li><a href="#">Profile</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">Log In</a></li>
+                            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/.nav-ends -->
+    {% block content %}
+
+
+    {% endblock content %}
+<!--Section: Contact v.2-->
+
+<section id="bottom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 btm-footer-links">
+               <p>© 2020 Copyright: shutystrap.com</p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 copyright">
+                Developed by <a href="#">Aspire Software Solutions</a> designed by <a href="#">Designing Team</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+
+</body>
+</html>

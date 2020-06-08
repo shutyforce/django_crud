@@ -1,0 +1,18 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<div class="container">
+
+  <h1>{{ object.title }} <small>written by : </small> <span>{{ object.author }}</span></h1>
+  <p class="subheading">{{ object.date_posted|date:'Y-m-d P' }}</p>
+  <ul class="aboutul">
+    <li> <i class="fa fa-check"></i>{{ object.content }}</li>
+  </ul>
+  <hr>
+<form action="{% url 'post_update' object.pk %}">
+    <button type="submit" class="btn btn-primary slide">Update</button>
+</form> <form action="{% url 'post_delete' object.pk %}">
+  <button type="submit" class="btn btn-primary slide">Delete</button>
+</form>
+</div>
+{% endblock content %}
+

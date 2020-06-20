@@ -1,13 +1,13 @@
-# *.pyc
-# *~
-# __pycache__
-# myvenv
-# db.sqlite3
-# /static
-# .DS_Store
-<venv>
+*.pyc
+*~
 __pycache__
-staticfiles
-local_settings.py
+myvenv
 db.sqlite3
-*.py[co]
+/static
+.DS_Store
+# <venv>
+# __pycache__
+# staticfiles
+# local_settings.py
+# db.sqlite3
+# *.py[co]
